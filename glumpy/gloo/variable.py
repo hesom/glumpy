@@ -259,7 +259,7 @@ class Uniform(Variable):
                     self._data = data.view(TextureCube)
 
         else:
-            self._data[...] = np.array(data,copy=False, order='F').ravel(order='F')
+            self._data[...] = np.array(data,copy=False).ravel()
 
         self._need_update = True
 
@@ -286,7 +286,7 @@ class Uniform(Variable):
         # Matrices (need a transpose argument)
         if self._gtype in (gl.GL_FLOAT_MAT2, gl.GL_FLOAT_MAT3, gl.GL_FLOAT_MAT4):
             # OpenGL ES 2.0 does not support transpose
-            transpose = False
+            transpose = True
             self._ufunction(self._handle, 1, transpose, self._data)
 
         # Textures (need to get texture count)
