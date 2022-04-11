@@ -259,7 +259,7 @@ class Uniform(Variable):
                     self._data = data.view(TextureCube)
 
         else:
-            self._data[...] = np.array(data,copy=False).ravel(order='F')
+            self._data[...] = np.array(data,copy=False, order='F').ravel(order='F')
 
         self._need_update = True
 
