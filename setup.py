@@ -19,7 +19,7 @@ if __name__ == "__main__":
         os.remove('MANIFEST')
 
     setup(name="glumpy",
-          version="1.2.1",
+          version="1.2.2",
           description="Fast, scalable & beautiful scientific visualisation",
           long_description = """Glumpy is a python library for scientific
                                 visualization that is both fast, scalable
@@ -48,7 +48,6 @@ if __name__ == "__main__":
           packages=['glumpy',
                     'glumpy.data',
                     'glumpy.ext',
-                    'glumpy.ext.sdf',
                     'glumpy.ext.freetype',
                     'glumpy.ext.freetype.ft_enums',
                     'glumpy.app',
@@ -77,7 +76,6 @@ if __name__ == "__main__":
                     'glumpy.graphics.collections'],
 
           package_data={
-              'glumpy.ext.sdf':             ['_sdf.pyx', 'sdf.h'],
               'glumpy.data':                ['6x13-italic.npy',
                                              '6x13-regular.npy',
                                              '6x13-bold.npy',
@@ -93,10 +91,4 @@ if __name__ == "__main__":
               'glumpy.library.transforms':  ['*.vert','*.frag', "*.geom", "*.glsl"],
               'glumpy.library.collections': ['*.vert','*.frag', "*.geom", "*.glsl"]
           },
-
-          cmdclass={'build_ext': build_ext},
-          ext_modules=[Extension("glumpy.ext.sdf.sdf",
-                                 sources=["glumpy/ext/sdf/_sdf.pyx",
-                                          "glumpy/ext/sdf/sdf.c"],
-                                 include_dirs=[numpy.get_include()])],
 )
