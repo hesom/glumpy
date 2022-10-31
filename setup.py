@@ -19,7 +19,7 @@ if __name__ == "__main__":
         os.remove('MANIFEST')
 
     setup(name="glumpy",
-          version="1.2.2",
+          version="2.2.2",
           description="Fast, scalable & beautiful scientific visualisation",
           long_description = """Glumpy is a python library for scientific
                                 visualization that is both fast, scalable
