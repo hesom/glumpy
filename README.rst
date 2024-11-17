@@ -20,7 +20,7 @@ Installation
 
 ::
 
-  git clone https://github.com/glumpy/glumpy.git
+  git clone https://github.com/hesom/glumpy.git
   cd glumpy
   python setup.py install
   cd examples
